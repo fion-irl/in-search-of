@@ -313,6 +313,7 @@
 
         <button class="btn" style="width: 100%" id="submit" type="submit">Save my spot</button>
         <p style="text-align: center; color: var(--ink-3); font-size: 17px; margin: 14px 0 0">No spam, ever. Unsubscribe with one reply.</p>
+        <p style="text-align: center; color: var(--ink-3); font-size: 17px; margin: 8px 0 0">Paid subscribers to the perennial report get Good Rally included.</p>
       </form>
     </div>
   </section>
@@ -382,7 +383,7 @@
         }
         form.innerHTML = `<div class="done" role="status"><h3><b style="font-family: var(--sans); letter-spacing: -0.03em">You're in,</b> ${esc(body.name.split(' ')[0])}.</h3>
           <p style="color: var(--ink-2); max-width: 32em; margin: 0 auto 28px">We'll ${body.channel === 'email' ? 'email' : 'message'} you before the founding group starts. Good rally!</p>
-          ${d.payUrl ? `<a class="btn" href="${esc(d.payUrl)}">Lock in founding price — $${esc(cfg.price || '29')}</a><p style="color: var(--ink-3); font-size: 17px; margin-top: 12px">Full refund if it's not for you by day 7.</p>` : ''}</div>`;
+          ${d.payUrl ? `<a class="btn" href="${esc(d.payUrl)}">Lock in founding price — $${esc(cfg.price || '29')}</a><p style="color: var(--ink-3); font-size: 17px; margin-top: 12px">Full refund if it's not for you by day 7.</p><p style="font-size: 17px; margin-top: 18px; padding: 14px 18px; background: var(--court-soft); border-radius: 14px; color: var(--ink-2)"><b>Paid subscriber to the perennial report?</b> Good Rally is included. Enter the code from your subscriber email at checkout.</p>` : ''}</div>`;
         form.scrollIntoView({ behavior: 'smooth', block: 'center' });
       } catch {
         alert('We could not reach the server. Please check your connection and try again.');

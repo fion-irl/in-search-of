@@ -2,6 +2,8 @@
 
 Everything needed to launch Good Rally from **perennialgirl.substack.com**. The perennial report stays free; people pay on goodrally.club.
 
+**Paid subscribers get Good Rally included.** Everyone else pays $29 on goodrally.club. Paid subscribers enter a 100%-off code at checkout; the code only goes out in a paid-only post (section 3 below).
+
 > **Voice note:** these drafts were written without access to your recent posts (Substack is blocked from the build environment). Run them through your usual voice review before publishing, and swap in your own phrasing wherever it sounds less like you.
 
 ---
@@ -12,6 +14,7 @@ Everything needed to launch Good Rally from **perennialgirl.substack.com**. The 
 - [ ] **Welcome email** (Settings → Emails → Welcome email): add the same line, so every new subscriber hears about it.
 - [ ] **Publication footer / email footer:** "Good Rally: AI literacy for better health → goodrally.club"
 - [ ] **Profile bio:** add "Founder, Good Rally".
+- [ ] **Stripe promotion code:** switch on *Allow promotion codes* on the Good Rally payment link, and create a 100%-off code for paid subscribers. Put it in the paid-only post (section 3).
 - [ ] **Import opt-ins:** once a week, download `goodrally.club/admin/signups.csv`, filter `newsletter = true`, and import those emails (Settings → Import subscribers).
 
 ---
@@ -53,6 +56,8 @@ Along the way you learn the habits that matter more than any trick: how to doubl
 
 **The founding group:** I'm opening it to a small group first. It's $29 for the 30 days, and if it isn't for you by day 7, you get a full refund.
 
+**If you're a paid subscriber to the perennial report, Good Rally is included.** Your code is on its way in a separate email. Thank you for supporting this newsletter; this is one way I can say it back.
+
 👉 **[Save your spot at goodrally.club](https://goodrally.club)**
 
 Good Rally is its own thing, but it grew out of everything we talk about here: moving well, recovering well, and taking care of ourselves for the long run. This newsletter stays exactly as it is, and free.
@@ -61,7 +66,36 @@ If you have a question about it, hit reply. I read everything.
 
 ---
 
-## 3. Launch-week Notes (Substack Notes + Threads)
+## 3. Paid-subscribers-only post
+
+Publish to **paid subscribers only**, the same day as the announcement.
+
+**Title:** Your Good Rally spot is on me
+**Subtitle:** A thank-you for paid subscribers
+
+---
+
+Thank you for being a paid subscriber. It genuinely keeps this newsletter going.
+
+As a small thank-you, **Good Rally is included** for you. That's the 30-day club I announced today: one short message a day about using AI for your health.
+
+**How to claim it:**
+1. Go to **goodrally.club** and fill in the short form.
+2. At checkout, tap *Add promotion code* and enter **[CODE]**.
+3. Your total becomes $0. That's it: you're a founding member.
+
+If you'd rather give your spot to a parent or friend, you can. Fill in the form with their details and tick "signing up on behalf of a loved one".
+
+Please keep the code to yourself; it's just for paid subscribers. And if you have questions, hit reply.
+
+---
+
+**Upgrade nudge** (for later free posts, a single line near the end):
+> *Paid subscribers get Good Rally, my 30-day AI-for-your-health club, included. [Upgrade here].*
+
+---
+
+## 4. Launch-week Notes (Substack Notes + Threads)
 
 Schedule one a day through the usual Buffer slate.
 
@@ -88,7 +122,7 @@ Schedule one a day through the usual Buffer slate.
 
 ---
 
-## 4. Ongoing (after launch)
+## 5. Ongoing (after launch)
 
 - **One essay a month** in the perennial report about AI and health, told through members' experiences (always with permission).
 - **Monthly Note:** a favourite member reply from the club.

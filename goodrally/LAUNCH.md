@@ -33,6 +33,8 @@ The two feed each other:
 ## Pricing for the test
 - **Founding cohort: $29 for the 30 days**, paid on goodrally.club, with a full refund if it's not for them by day 7. Keep the guarantee instinct from ISO.
 - Create one Stripe Payment Link and put it in the `STRIPE_LINK` secret. The site shows "Lock in founding price" straight after sign-up. Set the link's after-payment message to "You're in. Your first Good Rally message arrives on [start date]."
+- **Paid perennial subscribers get it free (option B).** On the payment link, switch on *Allow promotion codes*. Create a 100%-off promotion code (e.g. `PERENNIAL`) and share it only in a paid-subscribers-only Substack post (draft in `SUBSTACK.md`). Change the code for each cohort so it doesn't spread. They still check out, so every member is in one list, and $0 orders tell you how many came via the perk.
+- **Read the results in two groups:** paid subscribers using the code (does the perk drive upgrades and engagement?) and everyone else paying $29 (does Good Rally sell on its own?). The pass/fail targets above count only the $29 group.
 - If paid sign-ups are slow, run the first cohort free for 30 people and test payment on the *next* step (weekly membership, $9/month) instead. Either way, **someone must be asked to pay** before this counts as validated.
 
 ## Running the 30 days (founding cohort, ≤50 people)
