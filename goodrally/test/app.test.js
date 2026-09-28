@@ -1,0 +1,31 @@
+const test = require('node:test');
+const assert = require('node:assert');
+const fs = require('fs'); const os = require('os'); const path = require('path');
+process.env.DATA_DIR = fs.mkdtempSync(path.join(os.tmpdir(), 'gr-'));
+process.env.ADMIN_PASSWORD = 'rally';
+process.env.STRIPE_LINK = 'https://buy.stripe.com/test_gr';
+delete process.env.DATABASE_URL;
+const { app, store } = require('../server');
+let server, url;
+test.before(async () => { await store.init(); server = app.listen(0); url = `http://127.0.0.1:${server.address().port}`; });
+test.after(() => server.close());
+const post = (b) => fetch(url + '/api/signup', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(b) });
+
+test('signup validates, dedupes by email, links to Stripe, exports CSV behind password', async () => {
+  let r = await post({ channel: 'text' });
+  const { errors } = await r.json();
+  assert.ok(errors.name && errors.email && errors.phone);
+  r = await post({ name: 'Linda', email: 'Linda@Example.com', channel: 'text', phone: '(415) 555-0100', interests: ['appointments', 'bogus'], age: '65-74' });
+  const a = await r.json();
+  assert.equal(r.status, 200);
+  assert.match(a.payUrl, /client_reference_id=GR-/);
+  r = await post({ name: 'Linda B', email: 'linda@example.com', channel: 'email' });
+  assert.equal((await r.json()).id, a.id);
+  assert.equal(await store.count(), 1);
+  assert.equal((await fetch(url + '/admin/signups.csv')).status, 401);
+  r = await fetch(url + '/admin/signups.csv', { headers: { authorization: 'Basic ' + Buffer.from('x:rally').toString('base64') } });
+  const csv = await r.text();
+  assert.match(csv, /linda@example.com/);
+  assert.match(csv, /appointments/);
+  assert.doesNotMatch(csv, /bogus/);
+});
