@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/styles.css" />
+  <title>Payment received — In Search Of</title>
+  <meta name="robots" content="noindex" />
+</head>
+<body>
+  <nav class="nav"><div class="wrap"><a class="logo" href="/"><span class="logo-mark">ISO</span> In Search Of</a><a class="btn sm signal" href="/#start">Start a hunt</a></div></nav>
+  <main class="wrap narrow center" style="padding:90px 20px">
+    <span class="eyebrow"><span class="dot"></span> Payment received</span>
+    <h1 style="font-size:clamp(40px,7vw,64px);margin:20px 0 12px">You're in. Let the hunt begin.</h1>
+    <p class="muted" style="font-size:18px">We'll check it's findable within 24 hours and WhatsApp you once the hunt is on.</p>
+    <p style="margin-top:28px"><a class="btn signal" id="go" href="/">Track your hunt →</a></p>
+  </main>
+  <script>
+    // Stripe's "after payment" redirect lands here — bounce to the hunt this browser just created.
+    let t = null;
+    try { t = localStorage.getItem('iso_last_hunt'); } catch {}
+    if (t) { document.getElementById('go').href = '/h/' + t; setTimeout(() => location.replace('/h/' + t), 2500); }
+    else document.getElementById('go').textContent = 'Check WhatsApp for your hunt link';
+  </script>
+</body>
+</html>
