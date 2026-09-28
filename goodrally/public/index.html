@@ -45,6 +45,7 @@
     h1 b, h2 b { font-family: var(--sans); font-weight: 700; letter-spacing: -0.035em; }
     .hl { background: linear-gradient(transparent 58%, var(--ball) 58%, var(--ball) 92%, transparent 92%); padding: 0 .06em; }
     .kicker { font: 700 15px/1.2 var(--sans); letter-spacing: .16em; text-transform: uppercase; color: var(--court); }
+    .kicker a { color: inherit; }
 
     @keyframes rise { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: none; } }
     @keyframes bob { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
@@ -170,7 +171,7 @@
   <header class="hero">
     <div class="wrap hero-grid">
       <div>
-        <span class="kicker rise">A 30-day club · Founding members now</span>
+        <span class="kicker rise">A 30-day club from <a href="https://perennialgirl.substack.com" target="_blank" rel="noopener">the perennial report</a></span>
         <h1 class="rise d1"><b>Get better</b> at your health, <span class="hl">with AI.</span></h1>
         <p class="lede rise d2">One short message a day for 30 days. Each one shows you a simple, useful way to use AI for your health — from getting ready for a doctor's visit to planning dinner. Five minutes. No tech skills needed.</p>
         <div class="hero-cta rise d3">
@@ -249,6 +250,7 @@
         <span class="kicker">Our mission</span>
         <h2 style="font-size: clamp(38px, 4.6vw, 56px); margin: 16px 0 20px"><b>AI literacy</b> for better health.</h2>
         <p style="font-size: 21px; color: var(--ink-2); margin: 0 auto; max-width: 34em">AI is quickly becoming part of how people look after their health. We want everyone to be able to use it wisely: to ask better questions, check what they're told, and get more from their care. Good Rally starts with one small habit a day.</p>
+        <p style="font-size: 18px; color: var(--ink-3); margin: 22px auto 0; max-width: 34em">Good Rally comes from <a href="https://perennialgirl.substack.com" target="_blank" rel="noopener">the perennial report</a>, a newsletter about moving well, recovering well and living well for longer.</p>
       </div>
     </div>
   </section>
@@ -300,7 +302,8 @@
           </div>
         </fieldset>
 
-        <div class="field"><label class="check"><input type="checkbox" name="forSomeoneElse" /> I'm signing up on behalf of a parent or loved one</label></div>
+        <div class="field" style="display: grid; gap: 14px"><label class="check"><input type="checkbox" name="forSomeoneElse" /> I'm signing up on behalf of a parent or loved one</label>
+          <label class="check"><input type="checkbox" name="newsletter" /> Also send me the perennial report, the free weekly-ish newsletter behind Good Rally</label></div>
 
         <div class="row">
           <div class="field"><label for="source">How did you hear about us? <span class="hint">— optional</span></label>
@@ -327,7 +330,7 @@
 
   <footer>
     <div class="wrap">
-      <div><b style="color: var(--ink)">Good Rally</b> — AI literacy for better health.</div>
+      <div><b style="color: var(--ink)">Good Rally</b> — AI literacy for better health. From <a href="https://perennialgirl.substack.com" target="_blank" rel="noopener">the perennial report</a>.</div>
       <div>AI is a helper, not a doctor. For medical advice, always ask a professional.</div>
     </div>
   </footer>
@@ -361,7 +364,7 @@
         name: form.name.value, email: form.email.value, phone: form.phone.value, channel: form.channel.value,
         age: form.age.value, comfort: form.comfort.value, source: form.source.value, note: form.note.value,
         interests: $$('input[name="interests"]:checked').map((i) => i.value),
-        forSomeoneElse: form.forSomeoneElse.checked, website: form.website.value,
+        forSomeoneElse: form.forSomeoneElse.checked, newsletter: form.newsletter.checked, website: form.website.value,
       };
       btn.disabled = true; btn.textContent = 'Saving your spot…';
       try {

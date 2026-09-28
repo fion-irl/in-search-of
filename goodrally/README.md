@@ -9,9 +9,10 @@ A waitlist and founding-cohort sign-up site for **goodrally.club**, plus the ful
 | File | What it is |
 |---|---|
 | `public/index.html` | The landing page and sign-up form. It's designed for an older audience: Atkinson Hyperlegible body text at 20px, high contrast (every text colour is at least 6:1), large tap targets, and gentle motion that switches off when a device asks for reduced motion. |
-| `server.js` | Sign-up API (`POST /api/signup`), a CSV export for the organiser at `/admin/signups.csv` (password protected), and `/healthz`. |
+| `server.js` | Sign-up API (`POST /api/signup`, including the perennial report opt-in), a CSV export for the organiser at `/admin/signups.csv` (password protected), and `/healthz`. |
 | `CHALLENGE.md` | All 30 daily messages, ready to schedule. |
 | `LAUNCH.md` | The founding-cohort test plan, success criteria, guardrails, and ready-to-post launch copy. |
+| `SUBSTACK.md` | How Good Rally plugs into the perennial report: Substack setup checklist, the announcement post, and launch-week Notes. |
 
 ## Run locally
 

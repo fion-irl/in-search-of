@@ -100,6 +100,7 @@ function validate(body) {
       interests,
       note: clean(body.note, 500),
       forSomeoneElse: Boolean(body.forSomeoneElse),
+      newsletter: Boolean(body.newsletter), // opted in to the perennial report (import into Substack)
       source: clean(body.source, 80),
     },
   };
@@ -153,7 +154,7 @@ app.get('/admin/signups.csv', async (req, res) => {
   const pass = auth.slice(auth.indexOf(':') + 1);
   const ok = ADMIN_PASSWORD && pass.length === ADMIN_PASSWORD.length && crypto.timingSafeEqual(Buffer.from(pass), Buffer.from(ADMIN_PASSWORD));
   if (!ok) return res.set('WWW-Authenticate', 'Basic realm="Good Rally"').status(401).send('Password required');
-  const cols = ['id', 'createdAt', 'name', 'email', 'phone', 'channel', 'age', 'comfort', 'interests', 'forSomeoneElse', 'note', 'source'];
+  const cols = ['id', 'createdAt', 'name', 'email', 'phone', 'channel', 'age', 'comfort', 'interests', 'forSomeoneElse', 'newsletter', 'note', 'source'];
   const esc = (v) => `"${String(Array.isArray(v) ? v.join('; ') : v ?? '').replace(/"/g, '""')}"`;
   const rows = await store.all();
   res.set('Content-Type', 'text/csv').set('Content-Disposition', 'attachment; filename="goodrally-signups.csv"');

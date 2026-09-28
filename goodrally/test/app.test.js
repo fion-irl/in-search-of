@@ -15,7 +15,7 @@ test('signup validates, dedupes by email, links to Stripe, exports CSV behind pa
   let r = await post({ channel: 'text' });
   const { errors } = await r.json();
   assert.ok(errors.name && errors.email && errors.phone);
-  r = await post({ name: 'Linda', email: 'Linda@Example.com', channel: 'text', phone: '(415) 555-0100', interests: ['appointments', 'bogus'], age: '65-74' });
+  r = await post({ name: 'Linda', email: 'Linda@Example.com', channel: 'text', phone: '(415) 555-0100', interests: ['appointments', 'bogus'], age: '65-74', newsletter: true });
   const a = await r.json();
   assert.equal(r.status, 200);
   assert.match(a.payUrl, /client_reference_id=GR-/);
@@ -28,4 +28,6 @@ test('signup validates, dedupes by email, links to Stripe, exports CSV behind pa
   assert.match(csv, /linda@example.com/);
   assert.match(csv, /appointments/);
   assert.doesNotMatch(csv, /bogus/);
+  assert.match(csv, /,newsletter,/);
+  assert.match(csv, /"true","true"|"false","true"/); // newsletter opt-in kept after repeat signup
 });
