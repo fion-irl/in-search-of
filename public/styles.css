@@ -91,7 +91,7 @@ h1 em, h2 em, h3 em, .accent { font-family: var(--serif); font-style: italic; fo
 .hero { padding: 96px 0 110px; position: relative; overflow: hidden; }
 .eyebrow { display: inline-flex; align-items: center; gap: 12px; font: 600 12px/1 var(--sans); letter-spacing: 0.32em; text-transform: uppercase; color: var(--ink-3); }
 .eyebrow .dot, .live-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--signal); animation: pulse 2.2s ease-in-out infinite; flex-shrink: 0; }
-.hero h1 { font-size: clamp(56px, 8.4vw, 120px); line-height: 0.92; letter-spacing: -0.05em; margin: 36px 0 36px; }
+.hero h1 { font-size: clamp(52px, 7vw, 100px); line-height: 0.92; letter-spacing: -0.05em; margin: 36px 0 36px; }
 .hero p.lede { font-size: clamp(18px, 1.6vw, 21px); color: var(--ink-3); max-width: 30em; margin: 0 0 44px; }
 .hero-cta { display: flex; gap: 32px; flex-wrap: wrap; align-items: center; }
 .hero-note { font-size: 14px; color: var(--ink-3); margin-top: 36px; display: flex; gap: 28px; flex-wrap: wrap; }
@@ -104,7 +104,10 @@ h1 em, h2 em, h3 em, .accent { font-family: var(--serif); font-style: italic; fo
 .fcard { position: absolute; display: flex; flex-direction: column; gap: 12px; animation: float 7s ease-in-out infinite; }
 .fcard .ph { background: var(--paper-2); display: flex; align-items: flex-end; justify-content: space-between; padding: 18px; overflow: hidden; position: relative; }
 .fcard .ph.blush { background: var(--signal-soft); }
-.fcard .ph img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.fcard .ph img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; transition: transform 1.2s var(--ease); }
+.fcard:hover .ph img { transform: scale(1.04); }
+.fcard .ph img { animation: rise 1.2s var(--ease) both; }
+.fcard.c2 .ph img { animation-delay: .2s; } .fcard.c3 .ph img { animation-delay: .4s; }
 .fcard .ph .word { font: italic 400 clamp(24px, 2.5vw, 40px)/1 var(--serif); overflow-wrap: anywhere; color: var(--ink); letter-spacing: -0.02em; position: relative; }
 .fcard .ph.blush .word { color: var(--signal-ink); }
 .fcard .meta { display: flex; justify-content: space-between; font-size: 14px; gap: 12px; }

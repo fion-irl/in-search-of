@@ -47,3 +47,7 @@ npm test                          # business rules + full API flow incl. Stripe 
    - Optionally add a webhook to `https://insearchof.shop/api/stripe/webhook` for `checkout.session.completed` and put its signing secret in `STRIPE_WEBHOOK_SECRET`. Hunts then flip to "Feasibility check" the moment someone pays.
 
 See **[LAUNCH_PLAN.md](LAUNCH_PLAN.md)** for the go-live checklist and growth plan.
+
+## Photos
+
+Hero photos in `public/img/` are from [Unsplash](https://unsplash.com) (free to use under the Unsplash License). Swap them for photos of real finds as soon as you have some; real wins are more convincing.
