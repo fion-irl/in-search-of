@@ -1,6 +1,8 @@
 # Good Rally
 
-> Get better at your health, with AI. One short message a day for 30 days.
+> **Mission: AI literacy for better health.**
+>
+> The first product is a 30-day club: get better at your health, with AI, with one short message a day.
 
 A waitlist and founding-cohort sign-up site for **goodrally.club**, plus the full 30-day challenge content.
 

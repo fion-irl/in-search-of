@@ -1,5 +1,7 @@
 # Good Rally: founding cohort test plan
 
+**Company mission:** AI literacy for better health. The 30-day challenge is the first product: practical on the surface, with the literacy habits (double-checking, privacy, knowing when to ask a professional) built in.
+
 **The question this test answers:** will people (mostly 55+) stick with a daily AI-for-health habit for 30 days, and will they pay for it?
 
 ## The rules (decided now, so the data decides later)
