@@ -8,7 +8,7 @@
   <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,500&family=Hanken+Grotesk:wght@200;300;400;600;800&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="/styles.css" />
   <style>
     .hunt-head { padding: 48px 0 24px; }
@@ -39,7 +39,7 @@
   </style>
 </head>
 <body>
-  <nav class="nav"><div class="wrap"><a class="logo" href="/"><span class="logo-mark">ISO</span> In Search Of</a><a class="btn sm ghost" href="/#start">New hunt</a></div></nav>
+  <nav class="nav"><div class="wrap"><a class="logo" href="/" aria-label="ISO — In Search Of, home">ISO<span>.</span></a><a class="btn sm ghost" href="/#start">New hunt</a></div></nav>
   <main class="wrap" id="app"><div class="skeleton">Loading your hunt…</div></main>
 
   <script>
@@ -63,8 +63,8 @@
         case 'awaiting_payment': return ['One step left', 'Lock in your hunt and we start the feasibility check right away.'];
         case 'reviewing': return ['Checking it\'s findable', `We'll confirm by ${fmtT(h.feasibilityDueAt)}. If we can't find it, full refund — the clock hasn't started.`];
         case 'hunting': return ['We\'re on the hunt 🔎', `Day ${h.dayNumber} of ${h.tierDays}. We sweep every day and WhatsApp you the moment something fits.`];
-        case 'found': return ['We found it! 🎯', 'Message the seller soon — good listings move fast. If it falls through, reply on WhatsApp and we keep hunting.'];
-        case 'closed': return ['Hunt complete 🙌', 'You got it. Enjoy — and thanks for hunting with us.'];
+        case 'found': return ['We found it.', 'Message the seller soon — good listings move fast. If it falls through, reply on WhatsApp and we keep hunting.'];
+        case 'closed': return ['Hunt complete.', 'You got it. Enjoy — and thanks for hunting with us.'];
         case 'declined': return ['We couldn\'t take this one', (h.declineReason ? h.declineReason + '. ' : '') + (h.refundedAt ? 'Your full refund has been issued.' : 'Your full refund is on its way.')];
         case 'expired': return ['Hunt window ended', 'We didn\'t find a match within your budget, so — as promised — ' + (h.refundedAt ? 'you\'ve been refunded in full.' : 'your full refund is on its way.')];
         default: return ['Hunt cancelled', h.refundedAt ? 'You\'ve been refunded.' : ''];

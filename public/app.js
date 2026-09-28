@@ -31,7 +31,20 @@
     'Dyson V11, working battery',
   ];
   const track = $('#ticker');
-  if (track) track.innerHTML = [...isos, ...isos].map((t) => `<span>${esc(t)}</span>`).join('');
+  if (track) track.innerHTML = [...isos, ...isos].map((t) => `<span><b>ISO</b>${esc(t)}</span>`).join('');
+
+  // Scroll reveals + nav hairline once the page moves.
+  const io = 'IntersectionObserver' in window
+    ? new IntersectionObserver((entries) => entries.forEach((e) => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }), { threshold: 0.12 })
+    : null;
+  const watchReveals = () => $$('.reveal:not(.in)').forEach((el) => (io ? io.observe(el) : el.classList.add('in')));
+  watchReveals();
+  const nav = $('#nav');
+  if (nav) {
+    const onScroll = () => nav.classList.toggle('scrolled', window.scrollY > 8);
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+  }
 
   let config = { tiers: [] };
   fetch('/api/config').then((r) => r.json()).then((c) => {
@@ -43,11 +56,10 @@
   function renderTiers() {
     $('#tiers').innerHTML = config.tiers.map((t) => `
       <div class="tier ${t.popular ? 'popular' : ''}">
-        ${t.popular ? '<span class="badge">Most popular</span>' : ''}
-        <h3>${esc(t.name)}</h3>
-        <div class="days">${t.days}-DAY HUNT</div>
+        ${t.popular ? `<span class="badge">${t.days} days — most chosen</span>` : ''}
+        <h3>${t.days} days</h3>
         <div class="price">$${t.price}</div>
-        <div class="perday">$${t.perDay.toFixed(2)}/day · checked daily</div>
+        <div class="perday">$${t.perDay.toFixed(2)} a day · checked daily</div>
         <p>${esc(t.blurb)}</p>
         <a class="btn ${t.popular ? 'signal' : 'ghost'} block" href="#start" data-choose="${t.days}">Hunt for ${t.days} days</a>
       </div>`).join('');
@@ -78,6 +90,7 @@
   fetch('/api/wins').then((r) => r.json()).then(({ wins }) => {
     if (!wins || !wins.length) return;
     $('#wins-section').hidden = false;
+    $('#wins').classList.add('in');
     $('#wins').innerHTML = wins.map((w) => `
       <div class="win">
         ${w.imageUrl ? `<img src="${esc(w.imageUrl)}" alt="" loading="lazy" />` : ''}

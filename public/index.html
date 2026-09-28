@@ -10,17 +10,17 @@
   <meta property="og:image" content="/og.png" />
   <meta property="og:type" content="website" />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="theme-color" content="#f5efe3" />
+  <meta name="theme-color" content="#ffffff" />
   <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,500&family=Hanken+Grotesk:wght@200;300;400;600;800&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="/styles.css" />
 </head>
 <body>
-  <nav class="nav">
+  <nav class="nav" id="nav">
     <div class="wrap">
-      <a class="logo" href="/"><span class="logo-mark">ISO</span> In Search Of</a>
+      <a class="logo" href="/" aria-label="ISO — In Search Of, home">ISO<span>.</span></a>
       <div class="nav-links">
         <a href="#how">How it works</a>
         <a href="#pricing">Pricing</a>
@@ -33,27 +33,20 @@
   <header class="hero">
     <div class="wrap hero-grid">
       <div>
-        <span class="eyebrow"><span class="dot"></span> Now hunting · Bay Area + ships-anywhere</span>
-        <h1>Stop scrolling. <em>We'll find it.</em></h1>
-        <p class="lede">Tell us what you're hunting. We check Marketplace, Craigslist, Poshmark, eBay and the internet's nooks and crannies — every day — until we find it.</p>
-        <div class="hero-cta">
-          <a class="btn signal" href="#start">Start a hunt — from $20</a>
-          <a class="btn ghost" href="#how">How it works</a>
+        <span class="eyebrow rise"><span class="dot"></span> Now hunting — San Francisco Bay Area</span>
+        <h1 class="rise d1">Stop scrolling.<br /><span class="thin">We'll</span> <em>find it.</em></h1>
+        <p class="lede rise d2">Tell us what you're hunting. We search Marketplace, Craigslist, Poshmark, eBay and the internet's nooks and crannies — every day — and message you the moment it turns up.</p>
+        <div class="hero-cta rise d3">
+          <a class="btn signal lg" href="#start">Start a hunt — from $20</a>
+          <a class="link-arrow" href="#pricing">Find it, or it's free</a>
         </div>
-        <div class="hero-note"><span>Find it or it's free</span><span>Never over your budget</span><span>A human checks every find</span></div>
+        <div class="hero-note rise d4"><span>Never over your budget</span><span>A human checks every find</span></div>
       </div>
-      <div aria-hidden="true">
-        <div class="phone">
-          <div class="phone-screen">
-            <div class="phone-top">In Search Of 🔎</div>
-            <div class="bubble me">ISO a Vitamix under $150, need it before my sister's wedding shower 🙏<time>Mon 9:14</time></div>
-            <div class="bubble typing">On it. We'll sweep every day until we find one. Feasibility check done — it's findable ✅<time>Mon 11:02</time></div>
-            <div class="bubble typing"><b>🎯 WE FOUND IT!</b>Vitamix 5200, barely used — $110, 3 mi away.
-              <div class="lst"><div class="thumb">🫙</div><div><strong>Vitamix 5200 Blender</strong><small>Facebook Marketplace · $110</small></div></div>
-              <time>Wed 8:47</time></div>
-            <div class="bubble me typing">NO WAY. Messaging the seller now 😭🙌<time>Wed 8:49</time></div>
-          </div>
-        </div>
+      <div class="collage" aria-hidden="true">
+        <div class="fcard c1"><div class="ph"><span class="word">Espresso</span></div><div class="meta"><b>Breville Barista</b><span>2 days</span></div></div>
+        <div class="fcard c2"><div class="ph blush"><span class="word">Headphones</span></div><div class="meta"><b>Sony WH-1000XM5</b><span>4 days</span></div></div>
+        <div class="fcard c3"><div class="ph"><span class="word">Road bike</span></div><div class="meta"><b>54cm, carbon</b><span>1 day</span></div></div>
+        <div class="toastcard"><span class="live-dot"></span><div><span class="t">FOUND IT</span><span class="s">Vitamix 5200 · $110 · 3 mi away</span></div></div>
       </div>
     </div>
   </header>
@@ -64,19 +57,19 @@
 
   <section id="how">
     <div class="wrap">
-      <div class="section-head">
+      <div class="section-head reveal">
         <span class="kicker">How it works</span>
-        <h2>You post the ISO. We do the scrolling.</h2>
+        <h2>You post the ISO.<br /><span class="thin">We do the scrolling.</span></h2>
         <p>Like an "in search of" post, except someone's actually looking — every single day.</p>
       </div>
-      <div class="steps">
+      <div class="steps reveal">
         <div class="step"><h3>Tell us what you want</h3><p>Snap a photo, paste a link ("find me more like this"), or just describe it. Set your max price and your WhatsApp number.</p></div>
         <div class="step"><h3>We check it's findable</h3><p>Within 24 hours we tell you honestly if we can find it. If not, full refund before the clock even starts.</p></div>
         <div class="step"><h3>We sweep daily</h3><p>Marketplace, Craigslist, OfferUp, Poshmark, Mercari, eBay, Google Shopping, Reddit and the long tail. Every day, until it's found.</p></div>
         <div class="step"><h3>"Found it!" on WhatsApp</h3><p>A real person checks each match against your brief and budget, then texts you the listing. You buy it directly from the seller.</p></div>
       </div>
 
-      <div class="stats">
+      <div class="stats reveal">
         <div class="stat"><b>64%</b><span>of real ISO posts we tested had a strong local match <em>the same day</em>.</span></div>
         <div class="stat"><b>91%</b><span>had at least a close match. The stuff is out there — it just needs finding.</span></div>
         <div class="stat"><b>10+</b><span>marketplaces and search engines swept, every day, by a human.</span></div>
@@ -86,7 +79,7 @@
 
   <section style="padding-top: 0">
     <div class="wrap">
-      <div class="fit">
+      <div class="fit reveal">
         <div class="yes">
           <h3>We're great at</h3>
           <ul>
@@ -112,20 +105,25 @@
     </div>
   </section>
 
-  <section id="pricing" style="background: var(--paper-2)">
+  <section id="pricing">
     <div class="wrap">
-      <div class="section-head">
-        <span class="kicker">Pricing</span>
-        <h2>Pay once. We hunt every day.</h2>
+      <div class="section-head reveal">
+        <span class="kicker signal">Pricing</span>
+        <h2>Pay once.<br /><span class="thin">We hunt every day.</span></h2>
         <p>Longer hunts cost less per day — and they're where we find the most.</p>
       </div>
-      <div class="tiers" id="tiers"></div>
+      <div class="tiers reveal" id="tiers"></div>
 
-      <div class="guarantee" id="guarantee">
-        <div class="seal">FIND IT<br />OR IT'S<br />FREE</div>
+      <div class="guarantee reveal" id="guarantee">
+        <svg class="seal" viewBox="0 0 200 200" role="img" aria-label="Find it, or it's free">
+          <defs><path id="sealRing" d="M100,100 m-78,0 a78,78 0 1,1 156,0 a78,78 0 1,1 -156,0" /></defs>
+          <g class="ring"><text font-family="Hanken Grotesk, sans-serif" font-weight="600" font-size="11.5" letter-spacing="5.2" fill="#121014"><textPath href="#sealRing">FIND IT, OR IT'S FREE — FIND IT, OR IT'S FREE — </textPath></text></g>
+          <circle cx="100" cy="100" r="60" fill="none" stroke="#121014" stroke-width="0.8" />
+          <g transform="translate(76 72) scale(0.8)"><circle cx="27" cy="27" r="17" fill="none" stroke="#121014" stroke-width="2.4" /><path d="M39.5 39.5L56 56" stroke="#121014" stroke-width="2.4" stroke-linecap="round" /><circle cx="27" cy="27" r="4.5" fill="#d1007a" /></g>
+        </svg>
         <div>
-          <h3>100% refund if we don't find it.</h3>
-          <p>No fine print, no "we kept 20% for effort". If your hunt window ends and we haven't found a match within your budget, you get every cent back.</p>
+          <h3>Find it, <span class="thin">or it's</span> <em>free.</em></h3>
+          <p><strong>100% refund</strong> — no fine print, no "we kept 20% for effort". If your hunt window ends and we haven't found a match within your budget, you get every cent back.</p>
           <ul>
             <li>Also refunded if the listing is gone before you can act, or it's materially not as described.</li>
             <li>Unfindable? We say so within 24 hours and refund before the clock starts.</li>
@@ -138,19 +136,19 @@
 
   <section id="wins-section" hidden>
     <div class="wrap">
-      <div class="section-head">
+      <div class="section-head reveal">
         <span class="kicker">The found wall</span>
-        <h2>Recently hunted down.</h2>
+        <h2>Recently <span class="thin">hunted down.</span></h2>
       </div>
-      <div class="wins" id="wins"></div>
+      <div class="wins reveal" id="wins"></div>
     </div>
   </section>
 
   <section id="start">
     <div class="wrap narrow">
-      <div class="section-head center" style="margin-left:auto;margin-right:auto">
+      <div class="section-head center reveal" style="margin-left:auto;margin-right:auto">
         <span class="kicker">Start a hunt</span>
-        <h2>What are you hunting for?</h2>
+        <h2>What are you <em>hunting</em> for?</h2>
         <p>Takes 60 seconds. The more detail, the better we hunt.</p>
       </div>
 
@@ -160,9 +158,9 @@
         <div class="field" data-field="description">
           <span class="label">The item <span class="hint">— any or all of these</span></span>
           <div class="tabs" role="tablist">
-            <button type="button" class="on" data-tab="describe">✍️ Describe <span class="tick"></span></button>
-            <button type="button" data-tab="photo">📷 Photo <span class="tick"></span></button>
-            <button type="button" data-tab="link">🔗 Link <span class="tick"></span></button>
+            <button type="button" class="on" data-tab="describe">Describe <span class="tick"></span></button>
+            <button type="button" data-tab="photo">Photo <span class="tick"></span></button>
+            <button type="button" data-tab="link">Link <span class="tick"></span></button>
           </div>
           <div data-pane="describe">
             <textarea class="input" name="description" placeholder="e.g. Patagonia Better Sweater, women's medium, any dark colour. Or: a sturdy standing desk at least 60&quot; wide for my home office."></textarea>
@@ -262,9 +260,9 @@
 
   <section id="faq" style="padding-top:20px">
     <div class="wrap narrow">
-      <div class="section-head">
+      <div class="section-head reveal">
         <span class="kicker">FAQ</span>
-        <h2>Questions, answered.</h2>
+        <h2>Questions, <span class="thin">answered.</span></h2>
       </div>
       <details><summary>Do you buy the item for me?</summary><p>No — we find it, you buy it. We send you the listing link the moment we've confirmed it matches, and you deal with the seller directly. That keeps it fast and means you're never paying a markup.</p></details>
       <details><summary>Is it really a full refund if you don't find it?</summary><p>Yes. 100%. If your hunt window ends with no match within your budget, we refund the whole fee. Same if the listing we send is gone before you can act, or turns out to be materially not as described. The only exception is changing your mind once we've found it.</p></details>
@@ -278,7 +276,7 @@
 
   <footer>
     <div class="wrap">
-      <div><strong style="color:var(--ink)">In Search Of</strong> · We find it, or it's free.</div>
+      <div><a class="logo" href="/">ISO<span>.</span></a>&nbsp;&nbsp; In Search Of — find it, or it's free.</div>
       <div id="footerLinks"><a href="/terms">Hunt terms</a></div>
     </div>
   </footer>

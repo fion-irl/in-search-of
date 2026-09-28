@@ -44,7 +44,7 @@
     const me = await fetch('/api/admin/me').then((r) => r.json());
     app.innerHTML = `
       <div class="login card">
-        <a class="logo" href="/"><span class="logo-mark">ISO</span> Hunt desk</a>
+        <a class="logo" href="/">ISO<span>.</span><small>Hunt desk</small></a>
         ${me.configured ? `
           <form id="lf" style="margin-top:20px">
             <div class="field"><label for="pw">Password</label><input class="input" id="pw" type="password" autocomplete="current-password" autofocus /></div>
@@ -90,7 +90,7 @@
     const shown = hunts.filter(FILTERS[filter][1]);
     app.innerHTML = `
       <div class="top">
-        <div><a class="logo" href="/" target="_blank"><span class="logo-mark">ISO</span> Hunt desk</a></div>
+        <div><a class="logo" href="/" target="_blank">ISO<span>.</span><small>Hunt desk</small></a></div>
         <div class="actions"><a class="btn sm ghost" href="/api/admin/export.csv">Export CSV</a><button class="btn sm ghost" id="logout">Sign out</button></div>
       </div>
       <div class="kpis">
@@ -110,7 +110,7 @@
             <div class="meta"><span>${esc(h.id)}</span><span>${esc(h.name)}</span><span>max <b>$${h.maxPrice}</b></span><span>${h.tierDays}d · $${h.price}</span>${h.neededBy ? `<span class="pill signal">by ${fmt(h.neededBy)}</span>` : ''}${h.location ? `<span>📍 ${esc(h.location)}</span>` : ''}<span>${ago(h.createdAt)}</span></div>
           </div>
           <div class="right">${statusPill(h)}${todo(h)}${h.flags.daysLeft != null && h.status === 'hunting' ? `<span class="muted" style="font-size:13px">${h.flags.daysLeft}d left</span>` : ''}</div>
-        </a>`).join('') : `<div class="card center muted">${filter === 'today' ? 'Inbox zero. Go post in a Buy Nothing group ✨' : 'Nothing here.'}</div>`}</div>
+        </a>`).join('') : `<div class="card center muted">${filter === 'today' ? 'Inbox zero. Go find new hunters.' : 'Nothing here.'}</div>`}</div>
       <p class="muted" style="font-size:13px;margin-top:24px">Sources: ${Object.entries(stats.sources).map(([k, v]) => `${esc(k)} ${v}`).join(' · ') || '—'}</p>`;
     $$('[data-f]').forEach((b) => (b.onclick = () => { filter = b.dataset.f; renderQueue(); }));
     $('#logout').onclick = async () => { await api('/logout', { method: 'POST' }); renderLogin(); };
